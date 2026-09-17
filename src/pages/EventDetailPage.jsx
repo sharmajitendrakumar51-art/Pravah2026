@@ -66,7 +66,7 @@ export default function EventDetailPage() {
     <>
       <PageHero
         index={event.index}
-        label={`ARENA ${event.index} — TECHNO PRAVAH 2026`}
+        label={`ARENA ${event.index} — TECH PRAVAH 2026`}
         title={event.title.split(' & ').length > 1 ? event.title.split(' & ') : [event.title]}
         accentIndex={event.title.split(' & ').length > 1 ? 1 : 0}
         intro={event.overview}
@@ -310,7 +310,7 @@ export default function EventDetailPage() {
                 gap: 'clamp(1rem, 2vw, 1.6rem)',
               }}
             >
-              <ComingSoon icon={ScrollText} label="EVENT RULES" title="RULES COMING SOON" note="Detailed rules for this arena will be published in the official Techno Pravah 2026 rulebook." accent="cyan" />
+              <ComingSoon icon={ScrollText} label="EVENT RULES" title="RULES COMING SOON" note="Detailed rules for this arena will be published in the official Tech Pravah 2026 rulebook." accent="cyan" />
               <ComingSoon icon={BadgeCheck} label="ELIGIBILITY" title="CRITERIA COMING SOON" note="Eligibility, year restrictions and team composition rules will be announced with registration." accent="violet" />
             </div>
           )}

@@ -5,14 +5,19 @@
 // ============================================================
 
 export const FESTIVAL = {
-  name: 'TECHNO PRAVAH',
+  name: 'TECH PRAVAH',
   edition: '2026',
   type: 'TECHNICAL FESTIVAL',
   host: 'SKIT JAIPUR',
   hostFull:
     'Swami Keshavanand Institute of Technology, Management & Gramothan (SKIT), Jaipur',
-  dates: '28 SEPTEMBER — 03 OCTOBER 2026',
-  datesShort: '28 SEP — 03 OCT 2026',
+  dates: '12 OCTOBER — 15 OCTOBER 2026',
+  datesShort: '12 OCT — 15 OCT 2026',
+  // Countdown anchors — explicit +05:30 (Asia/Kolkata) offset so the
+  // remaining time resolves identically in every browser timezone.
+  startsAt: '2026-10-12T09:00:00+05:30',
+  endsAt: '2026-10-15T21:00:00+05:30',
+  kickoffLabel: '12 OCT 2026 • 09:00 AM IST',
   tagline: ['IGNITE INNOVATION.', 'ENGINEER THE FUTURE.'],
   meaning:
     'Pravah — the flow. An unstoppable current of ideas, energy and engineering set in motion.',
@@ -30,11 +35,11 @@ export const NAV = [
 ];
 
 export const MARQUEE_ITEMS = [
-  'TECHNO PRAVAH 2026',
+  'TECH PRAVAH 2026',
   'IGNITE INNOVATION',
   'ENGINEER THE FUTURE',
   'SKIT JAIPUR',
-  '28 SEP — 03 OCT',
+  '12 OCT — 15 OCT',
 ];
 
 // ------------------------------------------------------------
@@ -42,7 +47,7 @@ export const MARQUEE_ITEMS = [
 // ------------------------------------------------------------
 export const STATS = [
   { value: 1000, suffix: '+', label: 'TARGET PARTICIPANTS' },
-  { value: 6, suffix: '', label: 'DAYS OF INNOVATION' },
+  { value: 4, suffix: '', label: 'DAYS OF INNOVATION' },
   { value: null, glyph: '∞', label: 'IDEAS & POSSIBILITIES' },
   { value: null, glyph: 'SKIT', label: 'JAIPUR' },
 ];
@@ -135,12 +140,12 @@ export const EVENT_CATEGORIES = [
 ];
 
 // ------------------------------------------------------------
-// SCHEDULE — six-day cinematic timeline
+// SCHEDULE — four-day cinematic timeline
 // ------------------------------------------------------------
 export const SCHEDULE = [
   {
     day: 'DAY 01',
-    date: '28 SEP',
+    date: '12 OCT',
     weekday: 'MONDAY',
     title: 'INAUGURATION CEREMONY',
     note: 'The current is switched on. Gates open to the future.',
@@ -148,7 +153,7 @@ export const SCHEDULE = [
   },
   {
     day: 'DAY 02',
-    date: '29 SEP',
+    date: '13 OCT',
     weekday: 'TUESDAY',
     title: 'TECHNICAL EVENTS',
     note: 'Code, circuits and competition take centre stage.',
@@ -156,7 +161,7 @@ export const SCHEDULE = [
   },
   {
     day: 'DAY 03',
-    date: '30 SEP',
+    date: '14 OCT',
     weekday: 'WEDNESDAY',
     title: 'WORKSHOPS & SEMINARS',
     note: 'Deep-dives led by builders, researchers and industry minds.',
@@ -164,24 +169,8 @@ export const SCHEDULE = [
   },
   {
     day: 'DAY 04',
-    date: '01 OCT',
+    date: '15 OCT',
     weekday: 'THURSDAY',
-    title: 'COMPETITIONS & CHALLENGES',
-    note: 'The arenas ignite — only the sharpest advance.',
-    status: 'FULL SCHEDULE COMING SOON',
-  },
-  {
-    day: 'DAY 05',
-    date: '02 OCT',
-    weekday: 'FRIDAY',
-    title: 'INNOVATION SHOWCASE',
-    note: 'Prototypes, demonstrations and ideas in motion.',
-    status: 'FULL SCHEDULE COMING SOON',
-  },
-  {
-    day: 'DAY 06',
-    date: '03 OCT',
-    weekday: 'SATURDAY',
     title: 'GRAND FINALE & PRIZE DISTRIBUTION',
     note: 'The flow crests — champions crowned, the future signed off.',
     status: 'FULL SCHEDULE COMING SOON',
@@ -217,7 +206,7 @@ export const CONTACT_CHANNELS = [
   {
     icon: 'mail',
     title: 'GENERAL QUERIES',
-    desc: 'Everything about Techno Pravah 2026.',
+    desc: 'Everything about Tech Pravah 2026.',
   },
   {
     icon: 'ticket',

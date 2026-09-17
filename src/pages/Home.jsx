@@ -1,4 +1,5 @@
 import Marquee from '../components/Marquee';
+import Countdown from '../components/Countdown';
 import Hero from '../sections/Hero';
 import About from '../sections/About';
 import Events from '../sections/Events';
@@ -21,6 +22,7 @@ export default function Home() {
     <>
       <Hero />
       <Marquee />
+      <Countdown />
       <About />
       <Events />
       <Schedule />

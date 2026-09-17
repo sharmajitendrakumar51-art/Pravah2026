@@ -134,7 +134,7 @@ export default function Hero() {
         {/* Monumental wordmark */}
         <h1 className="display" style={{ userSelect: 'none' }}>
           <HeroLine delay={0.28} className="outline-text" style={{ fontSize: 'clamp(2.2rem, 7vw, 6rem)' }}>
-            TECHNO
+            TECH
           </HeroLine>
           <HeroLine
             delay={0.4}

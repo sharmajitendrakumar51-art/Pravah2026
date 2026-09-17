@@ -117,7 +117,7 @@ export default function Navbar() {
           <Link
             to={ROUTES.home}
             style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flexShrink: 0 }}
-            aria-label="Techno Pravah 2026 — home"
+            aria-label="Tech Pravah 2026 — home"
           >
             <span
               style={{

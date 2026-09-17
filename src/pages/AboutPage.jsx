@@ -17,11 +17,11 @@ export default function AboutPage() {
     <>
       <PageHero
         index="01"
-        label="ABOUT TECHNO PRAVAH"
+        label="ABOUT TECH PRAVAH"
         title={['THE FLOW', 'BEGINS HERE.']}
         accentIndex={1}
-        intro={`${FESTIVAL.name} ${FESTIVAL.edition} is the flagship technical festival of SKIT Jaipur — six days where engineering stops being coursework and becomes a movement.`}
-        meta={[FESTIVAL.dates, 'SIX DAYS', 'EIGHT ARENAS']}
+        intro={`${FESTIVAL.name} ${FESTIVAL.edition} is the flagship technical festival of SKIT Jaipur — four days where engineering stops being coursework and becomes a movement.`}
+        meta={[FESTIVAL.dates, 'FOUR DAYS', 'EIGHT ARENAS']}
         variant="icosa"
         hue="cyan"
         breadcrumb={[{ label: 'HOME', path: ROUTES.home }, { label: 'ABOUT' }]}
@@ -51,9 +51,9 @@ export default function AboutPage() {
           >
             <Reveal>
               <p style={{ fontSize: 'clamp(1.02rem, 1.45vw, 1.28rem)', lineHeight: 1.8, color: 'var(--muted)' }}>
-                <span style={{ color: 'var(--ink)' }}>Techno Pravah 2026</span> transforms the SKIT
+                <span style={{ color: 'var(--ink)' }}>Tech Pravah 2026</span> transforms the SKIT
                 campus into a living circuit of competitions, workshops, showcases and late-night
-                builds. Over six days, ideas move through every branch of technology — from
+                builds. Over four days, ideas move through every branch of technology — from
                 competitive code to embedded systems, applied intelligence and product engineering.
               </p>
             </Reveal>
@@ -163,7 +163,7 @@ export default function AboutPage() {
       <section className="section hairline-t" style={{ position: 'relative', overflow: 'hidden', background: 'var(--bg-2)' }}>
         <div className="aurora" style={{ transform: 'rotate(180deg)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <SectionHeader index="05" label="KEY STATISTICS" title="FESTIVAL SCALE" aside="The shape of Techno Pravah 2026 in numbers." />
+          <SectionHeader index="05" label="KEY STATISTICS" title="FESTIVAL SCALE" aside="The shape of Tech Pravah 2026 in numbers." />
 
           <div
             style={{
@@ -313,7 +313,7 @@ export default function AboutPage() {
             <div>
               <Reveal delay={0.1}>
                 <p style={{ fontSize: 'clamp(1rem, 1.4vw, 1.2rem)', lineHeight: 1.85, color: 'var(--muted)' }}>
-                  Techno Pravah 2026 is hosted by{' '}
+                  Tech Pravah 2026 is hosted by{' '}
                   <span style={{ color: 'var(--ink)' }}>{FESTIVAL.hostFull}</span>. The festival is
                   the institute's flagship technical platform — organised on campus, powered by its
                   departments, student chapters and volunteer crews.
@@ -337,7 +337,7 @@ export default function AboutPage() {
       <CtaBand
         eyebrow="THE CURRENT IS BUILDING"
         title={['ENTER THE', 'ARENA.']}
-        body="Eight arenas across six days. Explore what Techno Pravah 2026 has in motion."
+        body="Eight arenas across four days. Explore what Tech Pravah 2026 has in motion."
         primary={{ label: 'EXPLORE EVENTS', to: ROUTES.events }}
         secondary={{ label: 'VIEW SCHEDULE', to: ROUTES.schedule }}
       />

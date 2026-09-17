@@ -40,7 +40,7 @@ const SLUGS = {
 // existing category positioning — no new official claims).
 const OVERVIEW = {
   coding:
-    'The pure-logic arena of Techno Pravah. Competitive programming, debugging gauntlets and algorithm sprints where the shortest path wins.',
+    'The pure-logic arena of Tech Pravah. Competitive programming, debugging gauntlets and algorithm sprints where the shortest path wins.',
   'ai-ml':
     'Where machines learn to reason. Model building, data challenges and applied intelligence problems judged on rigour and creativity.',
   cyber:

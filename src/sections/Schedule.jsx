@@ -92,7 +92,7 @@ export default function Schedule() {
 
     const mm = gsap.matchMedia();
 
-    // Desktop: pinned horizontal journey through the six days.
+    // Desktop: pinned horizontal journey through the four days.
     mm.add('(min-width: 861px)', () => {
       const getDistance = () => track.scrollWidth - window.innerWidth + window.innerWidth * 0.08;
 
@@ -166,12 +166,12 @@ export default function Schedule() {
           >
             <Reveal delay={0.08}>
               <h2 className="display" style={{ fontSize: 'clamp(2.4rem, 6.4vw, 5.6rem)' }}>
-                SIX DAYS <span className="outline-text">OF FLOW</span>
+                FOUR DAYS <span className="outline-text">OF FLOW</span>
               </h2>
             </Reveal>
             <Reveal delay={0.16}>
               <p className="mono" style={{ fontSize: '0.7rem', letterSpacing: '0.26em', color: 'var(--muted)', textTransform: 'uppercase' }}>
-                28 SEP — 03 OCT 2026 // KEEP SCROLLING
+                12 OCT — 15 OCT 2026 // KEEP SCROLLING
               </p>
             </Reveal>
           </div>

@@ -69,8 +69,8 @@ export default function Prizes() {
 
           <Reveal delay={0.2}>
             <p style={{ color: 'var(--muted)', maxWidth: '52ch', margin: 'clamp(1.6rem, 3vw, 2.4rem) auto 0', lineHeight: 1.8, fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)' }}>
-              Every arena at Techno Pravah 2026 carries its own reward — and the boldest builders
-              take the stage at the Grand Finale on 03 October. Amounts and categories are under
+              Every arena at Tech Pravah 2026 carries its own reward — and the boldest builders
+              take the stage at the Grand Finale on 15 October. Amounts and categories are under
               wraps until the reveal.
             </p>
           </Reveal>

@@ -21,10 +21,10 @@ export default function SchedulePage() {
       <PageHero
         index="03"
         label="FESTIVAL SCHEDULE"
-        title={['SIX DAYS', 'OF FLOW.']}
+        title={['FOUR DAYS', 'OF FLOW.']}
         accentIndex={1}
-        intro="From the inauguration on 28 September to the Grand Finale on 03 October — the six-day arc of Techno Pravah 2026. Slot-wise timings are released with the detailed schedule."
-        meta={[FESTIVAL.dates, '06 DAYS', 'TIMINGS COMING SOON']}
+        intro="From the inauguration on 12 October to the Grand Finale on 15 October — the four-day arc of Tech Pravah 2026. Slot-wise timings are released with the detailed schedule."
+        meta={[FESTIVAL.dates, '04 DAYS', 'TIMINGS COMING SOON']}
         variant="cone"
         hue="amber"
         breadcrumb={[{ label: 'HOME', path: ROUTES.home }, { label: 'SCHEDULE' }]}
@@ -231,7 +231,7 @@ export default function SchedulePage() {
       </section>
 
       <CtaBand
-        eyebrow="SIX DAYS, ONE CURRENT"
+        eyebrow="FOUR DAYS, ONE CURRENT"
         title={['SEE THE', 'ARENAS.']}
         body="Eight event categories run across the festival week. Explore what each one holds."
         primary={{ label: 'EXPLORE EVENTS', to: ROUTES.events }}

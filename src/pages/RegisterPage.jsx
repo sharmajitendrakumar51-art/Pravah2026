@@ -134,7 +134,7 @@ export default function RegisterPage() {
         label="REGISTRATION"
         title={['READY TO SHAPE', 'THE FUTURE?']}
         accentIndex={1}
-        intro={`${FESTIVAL.name} ${FESTIVAL.edition} — ${FESTIVAL.host}. One campus, six days, eight arenas. Registration opens soon.`}
+        intro={`${FESTIVAL.name} ${FESTIVAL.edition} — ${FESTIVAL.host}. One campus, four days, eight arenas. Registration opens soon.`}
         meta={[FESTIVAL.datesShort, 'REGISTRATION OPENS SOON']}
         variant="sphere"
         hue="violet"

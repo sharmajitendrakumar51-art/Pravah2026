@@ -47,8 +47,8 @@ export default function EventsPage() {
         label="EVENT CATEGORIES"
         title={['EIGHT', 'ARENAS.']}
         accentIndex={1}
-        intro="Eight battlegrounds of engineering across six days. Pick your current — individual event listings, rules and registrations unlock as they are released."
-        meta={['08 ARENAS', '06 DAYS', 'LISTINGS COMING SOON']}
+        intro="Eight battlegrounds of engineering across four days. Pick your current — individual event listings, rules and registrations unlock as they are released."
+        meta={['08 ARENAS', '04 DAYS', 'LISTINGS COMING SOON']}
         variant="octa"
         hue="violet"
         breadcrumb={[{ label: 'HOME', path: ROUTES.home }, { label: 'EVENTS' }]}
@@ -194,7 +194,7 @@ export default function EventsPage() {
       <CtaBand
         eyebrow="PICK YOUR ARENA"
         title={['READY TO', 'COMPETE?']}
-        body="Registration opens soon. Explore the six-day schedule while the catalog is finalised."
+        body="Registration opens soon. Explore the four-day schedule while the catalog is finalised."
         primary={{ label: 'REGISTER NOW', to: ROUTES.register }}
         secondary={{ label: 'VIEW SCHEDULE', to: ROUTES.schedule }}
       />

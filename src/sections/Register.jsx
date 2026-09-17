@@ -49,7 +49,7 @@ export default function Register() {
               fontSize: 'clamp(0.98rem, 1.35vw, 1.12rem)',
             }}
           >
-            One campus. Six days. Eight arenas. When the gates of Techno Pravah 2026 open, you will
+            One campus. Four days. Eight arenas. When the gates of Tech Pravah 2026 open, you will
             want to already be in the current.
           </p>
         </Reveal>

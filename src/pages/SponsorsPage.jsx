@@ -141,7 +141,7 @@ export default function SponsorsPage() {
             index="02"
             label="BECOME A PARTNER"
             title={<>PARTNER WITH <span className="outline-text">PRAVAH</span></>}
-            aside="Reach a campus-wide audience of engineers across six days and eight arenas."
+            aside="Reach a campus-wide audience of engineers across four days and eight arenas."
           />
 
           <div
@@ -171,7 +171,7 @@ export default function SponsorsPage() {
       <CtaBand
         eyebrow="ALIGN WITH INNOVATION"
         title={['BACK THE', 'BUILDERS.']}
-        body="Partnership enquiries route through the official Techno Pravah 2026 contact channels."
+        body="Partnership enquiries route through the official Tech Pravah 2026 contact channels."
         primary={{ label: 'CONTACT US', to: ROUTES.contact }}
         secondary={{ label: 'ABOUT PRAVAH', to: ROUTES.about }}
       />

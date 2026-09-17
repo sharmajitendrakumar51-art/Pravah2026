@@ -11,8 +11,8 @@ export default function About() {
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <SectionHeader
           index="01"
-          label="ABOUT TECHNO PRAVAH"
-          aside="Six days where engineering stops being coursework and becomes a movement."
+          label="ABOUT TECH PRAVAH"
+          aside="Four days where engineering stops being coursework and becomes a movement."
         />
 
         {/* Monumental statement */}
@@ -35,8 +35,8 @@ export default function About() {
         >
           <Reveal delay={0.1}>
             <p style={{ fontSize: 'clamp(1.05rem, 1.5vw, 1.3rem)', lineHeight: 1.75, color: 'var(--muted)', maxWidth: '52ch' }}>
-              <span style={{ color: 'var(--ink)' }}>Techno Pravah 2026</span> is the flagship technical
-              festival of {FESTIVAL.hostFull}. Over six days, the campus transforms into a living
+              <span style={{ color: 'var(--ink)' }}>Tech Pravah 2026</span> is the flagship technical
+              festival of {FESTIVAL.hostFull}. Over four days, the campus transforms into a living
               circuit of competitions, workshops, showcases and late-night builds — a current of
               ideas moving through every branch of technology.
             </p>

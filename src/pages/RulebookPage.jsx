@@ -21,7 +21,7 @@ export default function RulebookPage() {
         label="RULEBOOK"
         title={['PRAVAH 2026', 'RULEBOOK.']}
         accentIndex={1}
-        intro="The official rules governing participation, judging and conduct at Techno Pravah 2026. Published by the organising committee — nothing here is provisional."
+        intro="The official rules governing participation, judging and conduct at Tech Pravah 2026. Published by the organising committee — nothing here is provisional."
         meta={[`${String(RULEBOOK_SECTIONS.length).padStart(2, '0')} SECTIONS`, 'RULEBOOK COMING SOON']}
         variant="box"
         hue="cyan"

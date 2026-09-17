@@ -21,7 +21,7 @@ export default function WorkshopsPage() {
         title={['KNOWLEDGE', 'IN TRANSMISSION.']}
         accentIndex={1}
         intro="Connect with technology experts, researchers, entrepreneurs and industry leaders across the festival week. Session lineups are being finalised."
-        meta={['30 SEP — WORKSHOP DAY', 'SESSIONS COMING SOON', 'SPEAKERS COMING SOON']}
+        meta={['14 OCT — WORKSHOP DAY', 'SESSIONS COMING SOON', 'SPEAKERS COMING SOON']}
         variant="torus"
         hue="violet"
         breadcrumb={[{ label: 'HOME', path: ROUTES.home }, { label: 'WORKSHOPS' }]}
@@ -137,7 +137,7 @@ export default function WorkshopsPage() {
             index="04"
             label="SESSION SCHEDULE"
             title="WHEN THEY RUN"
-            aside={`Workshops and seminars are anchored to 30 September, with additional sessions across the festival week.`}
+            aside={`Workshops and seminars are anchored to 14 October, with additional sessions across the festival week.`}
           />
           <ComingSoon
             icon={CalendarDays}

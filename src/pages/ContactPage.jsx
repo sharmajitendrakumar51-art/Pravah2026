@@ -52,7 +52,7 @@ export default function ContactPage() {
         label="CONTACT"
         title={['GET IN', 'TOUCH.']}
         accentIndex={1}
-        intro="Direct lines to the Techno Pravah 2026 control room open soon. The festival is hosted on the SKIT Jaipur campus — institutional details are below."
+        intro="Direct lines to the Tech Pravah 2026 control room open soon. The festival is hosted on the SKIT Jaipur campus — institutional details are below."
         meta={['SKIT JAIPUR', FESTIVAL.datesShort, 'CONTACT DETAILS COMING SOON']}
         variant="octa"
         hue="cyan"
@@ -66,7 +66,7 @@ export default function ContactPage() {
           <SectionHeader
             index="01"
             label="THE INSTITUTION"
-            aside="Techno Pravah 2026 is an on-campus festival hosted by SKIT Jaipur."
+            aside="Tech Pravah 2026 is an on-campus festival hosted by SKIT Jaipur."
           />
 
           <h2 className="display" style={{ fontSize: 'clamp(2rem, 6vw, 5.4rem)', maxWidth: '16ch' }}>
@@ -360,7 +360,7 @@ export default function ContactPage() {
             index="04"
             label="QUICK NAVIGATION"
             title="JUMP ANYWHERE"
-            aside="Every corner of the Techno Pravah 2026 platform, one tap away."
+            aside="Every corner of the Tech Pravah 2026 platform, one tap away."
           />
 
           <div
@@ -416,7 +416,7 @@ export default function ContactPage() {
             icon={Megaphone}
             label="OFFICIAL HANDLES"
             title="SOCIALS COMING SOON"
-            note="Official Techno Pravah 2026 social accounts will be linked here once announced. No unofficial handles are listed."
+            note="Official Tech Pravah 2026 social accounts will be linked here once announced. No unofficial handles are listed."
             size="lg"
             accent="magenta"
           />

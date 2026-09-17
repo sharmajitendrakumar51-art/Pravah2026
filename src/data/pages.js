@@ -70,7 +70,7 @@ export const ABOUT_PILLARS = [
     icon: 'users',
     title: 'COMMUNITY',
     body:
-      'Six days of teams, mentors, judges and volunteers moving as one current — the fest is as much about who you build with as what you build.',
+      'Four days of teams, mentors, judges and volunteers moving as one current — the fest is as much about who you build with as what you build.',
   },
 ];
 
@@ -82,14 +82,14 @@ export const ABOUT_STATEMENTS = [
     label: 'VISION',
     title: 'THE PRAVAH VISION',
     pending: true,
-    note: 'The official vision statement for Techno Pravah 2026 will be published here.',
+    note: 'The official vision statement for Tech Pravah 2026 will be published here.',
   },
   {
     id: 'mission',
     label: 'MISSION',
     title: 'THE PRAVAH MISSION',
     pending: true,
-    note: 'The official mission statement for Techno Pravah 2026 will be published here.',
+    note: 'The official mission statement for Tech Pravah 2026 will be published here.',
   },
 ];
 
@@ -112,7 +112,7 @@ export const WHY_PARTICIPATE = [
   {
     n: '04',
     title: 'EARN RECOGNITION',
-    body: 'Arena titles and Grand Finale honours on 03 October. Prize details announced soon.',
+    body: 'Arena titles and Grand Finale honours on 15 October. Prize details announced soon.',
   },
 ];
 
@@ -225,7 +225,7 @@ export const REGISTRATION_OPEN = false;
 export const REGISTRATION_URL = null;
 
 export const REGISTRATION_STEPS = [
-  { n: '01', title: 'CHOOSE YOUR ARENA', body: 'Pick from eight event categories across six days.' },
+  { n: '01', title: 'CHOOSE YOUR ARENA', body: 'Pick from eight event categories across four days.' },
   { n: '02', title: 'ASSEMBLE YOUR TEAM', body: 'Solo or squad — team size rules per event announced soon.' },
   { n: '03', title: 'SUBMIT DETAILS', body: 'Participant and institution details through the official form.' },
   { n: '04', title: 'CONFIRM YOUR SLOT', body: 'Receive confirmation and reporting instructions.' },
@@ -249,7 +249,7 @@ export const REGISTRATION_FIELDS = [
 // CONTACT PAGE
 // ------------------------------------------------------------
 export const COORDINATOR_DESKS = [
-  { id: 'general', label: 'FESTIVAL DESK', scope: 'General queries about Techno Pravah 2026.' },
+  { id: 'general', label: 'FESTIVAL DESK', scope: 'General queries about Tech Pravah 2026.' },
   { id: 'events', label: 'EVENT DESK', scope: 'Arena rules, teams and participation.' },
   { id: 'registration', label: 'REGISTRATION DESK', scope: 'Entry, confirmations and slots.' },
   { id: 'sponsorship', label: 'PARTNERSHIP DESK', scope: 'Sponsorships and collaborations.' },
@@ -266,7 +266,7 @@ export const LEGAL_PAGES = {
     label: 'PRIVACY POLICY',
     title: ['DATA &', 'PRIVACY.'],
     intro:
-      'How participant information is collected, used and protected across the Techno Pravah 2026 platform.',
+      'How participant information is collected, used and protected across the Tech Pravah 2026 platform.',
     sections: [
       'INFORMATION WE COLLECT',
       'HOW INFORMATION IS USED',
@@ -284,7 +284,7 @@ export const LEGAL_PAGES = {
     label: 'TERMS & CONDITIONS',
     title: ['TERMS OF', 'PARTICIPATION.'],
     intro:
-      'The conditions governing use of this platform and participation in Techno Pravah 2026.',
+      'The conditions governing use of this platform and participation in Tech Pravah 2026.',
     sections: [
       'ACCEPTANCE OF TERMS',
       'ELIGIBILITY',
@@ -302,7 +302,7 @@ export const LEGAL_PAGES = {
     label: 'REFUND POLICY',
     title: ['REFUNDS &', 'CANCELLATIONS.'],
     intro:
-      'Conditions applicable to registration payments, cancellations and refunds for Techno Pravah 2026.',
+      'Conditions applicable to registration payments, cancellations and refunds for Tech Pravah 2026.',
     sections: [
       'SCOPE OF POLICY',
       'CANCELLATION BY PARTICIPANT',

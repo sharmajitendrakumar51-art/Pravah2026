@@ -147,7 +147,7 @@ export default function Lightbox({ items, index, onClose, onPrev, onNext }) {
                     MEDIA COMING SOON
                   </p>
                   <p className="mono" style={{ marginTop: '0.9rem', fontSize: '0.62rem', letterSpacing: '0.3em', color: 'var(--muted)' }}>
-                    {item.category ?? 'TECHNO PRAVAH 2026'}
+                    {item.category ?? 'TECH PRAVAH 2026'}
                   </p>
                 </div>
               )}

@@ -232,7 +232,7 @@ export default function Events() {
             </p>
             <span className="chip magenta">
               <span className="dot" />
-              08 ARENAS // 06 DAYS
+              08 ARENAS // 04 DAYS
             </span>
           </div>
         </Reveal>

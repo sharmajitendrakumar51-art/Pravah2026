@@ -76,7 +76,7 @@ export default function Footer() {
                 <img src="/skit-logo.png" alt="SKIT logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
               </span>
               <span>
-                <span className="display" style={{ fontSize: '1rem', display: 'block' }}>TECHNO PRAVAH 2026</span>
+                <span className="display" style={{ fontSize: '1rem', display: 'block' }}>TECH PRAVAH 2026</span>
                 <span className="mono" style={{ fontSize: '0.58rem', letterSpacing: '0.28em', color: 'var(--muted)', marginTop: '0.3rem', display: 'block' }}>
                   {FESTIVAL.host}
                 </span>
@@ -192,7 +192,7 @@ export default function Footer() {
             textTransform: 'uppercase',
           }}
         >
-          <span>© 2026 TECHNO PRAVAH — {FESTIVAL.host}</span>
+          <span>© 2026 TECH PRAVAH — {FESTIVAL.host}</span>
           <span>DESIGNED AS A DIGITAL FESTIVAL EXPERIENCE</span>
         </div>
       </div>

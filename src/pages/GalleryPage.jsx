@@ -193,7 +193,7 @@ export default function GalleryPage() {
         label="EVENT GALLERY"
         title={['MOMENTS', 'IN THE MAKING.']}
         accentIndex={1}
-        intro="The visual archive of Techno Pravah 2026 — technology, innovation, competition and collaboration. Official photography publishes as the festival unfolds."
+        intro="The visual archive of Tech Pravah 2026 — technology, innovation, competition and collaboration. Official photography publishes as the festival unfolds."
         meta={['04 CATEGORIES', 'MEDIA COMING SOON']}
         variant="dodeca"
         hue="magenta"
@@ -255,7 +255,7 @@ export default function GalleryPage() {
                   MEDIA COMING SOON
                 </p>
                 <p className="mono" style={{ marginTop: '0.9rem', fontSize: '0.62rem', letterSpacing: '0.32em', color: 'var(--muted)' }}>
-                  TECHNO PRAVAH 2026 — VISUAL ARCHIVE
+                  TECH PRAVAH 2026 — VISUAL ARCHIVE
                 </p>
               </div>
             </motion.div>
@@ -312,7 +312,7 @@ export default function GalleryPage() {
             icon={Film}
             label="AFTERMOVIE"
             title="FILM COMING SOON"
-            note="The official Techno Pravah 2026 aftermovie will be released here following the Grand Finale."
+            note="The official Tech Pravah 2026 aftermovie will be released here following the Grand Finale."
             size="lg"
             accent="magenta"
           />
