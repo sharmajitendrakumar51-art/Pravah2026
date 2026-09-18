@@ -1,0 +1,156 @@
+/* ============================================================
+   FESTIVAL INTRO — overlay styles
+   A fixed, full-viewport cinematic entrance that sits above the
+   homepage (which is mounted behind it from the first frame).
+   ============================================================ */
+
+.fx-intro {
+  position: fixed;
+  inset: 0;
+  /* High, documented stacking layer: above page content (~5), the noise
+     field (2000) and the custom cursor (3000). */
+  z-index: 3400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Near-black backdrop with a subtle navy illumination around the core. */
+  background:
+    radial-gradient(60% 55% at 50% 50%, rgba(20, 40, 74, 0.55) 0%, rgba(9, 14, 26, 0) 60%),
+    #05070b;
+  overflow: hidden;
+  /* Clip the logo as it enlarges past the viewport during the zoom. */
+  contain: strict;
+  /* Respect notches / rounded corners on mobile. */
+  padding:
+    env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* Wrapper the whole logo lives in. Position + transform-origin are set by
+   JS (FestivalIntro) from the MEASURED core, so the glowing core sits exactly
+   at the viewport centre and the zoom travels straight into it. Kept at the
+   top-left origin here; GSAP translates it into place before first paint. */
+.fx-intro__stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+.fx-intro__logo {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  /* Restrained core glow — keeps the logo sharp, never washed out. */
+  filter: drop-shadow(0 0 26px rgba(80, 198, 216, 0.35));
+}
+
+/* Corner + supporting labels — quiet and secondary. */
+.fx-intro__label {
+  position: absolute;
+  z-index: 2;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: clamp(0.58rem, 1.4vw, 0.72rem);
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: rgba(226, 232, 255, 0.5);
+  pointer-events: none;
+  user-select: none;
+}
+
+.fx-intro__label--tl {
+  top: max(1.2rem, env(safe-area-inset-top));
+  left: max(1.2rem, env(safe-area-inset-left));
+}
+
+.fx-intro__label--tr {
+  top: max(1.2rem, env(safe-area-inset-top));
+  right: max(1.2rem, env(safe-area-inset-right));
+  color: var(--cyan, #22d3ee);
+}
+
+.fx-intro__status {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(3.4rem, 10vh, 6rem);
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+.fx-intro__status-text {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: clamp(0.56rem, 1.3vw, 0.68rem);
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(226, 232, 255, 0.62);
+  white-space: nowrap;
+}
+
+/* Thin progress line — animation progress only, not a download claim. */
+.fx-intro__progress {
+  width: clamp(120px, 24vw, 240px);
+  height: 1px;
+  background: rgba(148, 163, 184, 0.18);
+  overflow: hidden;
+}
+
+.fx-intro__progress-fill {
+  height: 100%;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--cyan, #22d3ee), var(--violet, #8b5cf6), var(--magenta, #e879f9));
+}
+
+/* Always-usable Skip control. */
+.fx-intro__skip {
+  position: absolute;
+  right: max(1.2rem, env(safe-area-inset-right));
+  bottom: max(1.4rem, env(safe-area-inset-bottom));
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.25rem;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.66rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(226, 232, 255, 0.78);
+  background: rgba(10, 13, 24, 0.4);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fx-intro__skip:hover,
+.fx-intro__skip:focus-visible {
+  color: var(--cyan, #22d3ee);
+  border-color: var(--cyan, #22d3ee);
+  box-shadow: 0 0 24px -8px rgba(34, 211, 238, 0.5);
+}
+
+/* Visible focus styling for keyboard users. */
+.fx-intro__skip:focus-visible {
+  outline: 2px solid var(--cyan, #22d3ee);
+  outline-offset: 3px;
+}
+
+/* Reduced motion: no looping / pulsing decoration; the JS path also
+   bypasses the rotate + zoom sequence entirely. */
+@media (prefers-reduced-motion: reduce) {
+  .fx-intro__stage,
+  .fx-intro__logo {
+    will-change: auto;
+  }
+}
