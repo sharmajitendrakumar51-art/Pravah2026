@@ -190,8 +190,7 @@ export default function Hero() {
           </HeroLine>
           <HeroLine delay={0.52} style={{ fontSize: 'clamp(2.4rem, 6.4vw, 5.4rem)' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '0.5em', flexWrap: 'wrap' }}>
-              <span className="outline-text">20</span>
-              <span>26</span>
+              <span>2026</span>
               <span
                 className="mono"
                 style={{
@@ -248,63 +247,6 @@ export default function Hero() {
           aria-hidden="true"
         />
       </motion.div>
-
-      {/* Scroll cue */}
-      <motion.button
-        onClick={() => scrollToSection('#about')}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.6, duration: 1 }}
-        className="mono"
-        style={{
-          position: 'absolute',
-          right: 'clamp(1.4rem, 4vw, 3.4rem)',
-          bottom: 'clamp(4.5rem, 9vh, 7rem)',
-          zIndex: 6,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.9rem',
-          fontSize: '0.62rem',
-          letterSpacing: '0.4em',
-          color: 'var(--muted)',
-          textTransform: 'uppercase',
-          writingMode: 'vertical-rl',
-        }}
-      >
-        SCROLL TO ENTER
-        <motion.span
-          animate={{ y: [0, 7, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-          style={{ writingMode: 'horizontal-tb' }}
-        >
-          <ArrowDown size={14} />
-        </motion.span>
-      </motion.button>
-
-      {/* Side coordinates (desktop) */}
-      {!isMobile && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.8, duration: 1 }}
-          className="mono"
-          style={{
-            position: 'absolute',
-            left: 'clamp(1.4rem, 3vw, 2.6rem)',
-            top: '50%',
-            transform: 'translateY(-50%) rotate(180deg)',
-            writingMode: 'vertical-rl',
-            fontSize: '0.6rem',
-            letterSpacing: '0.42em',
-            color: 'var(--faint)',
-            textTransform: 'uppercase',
-            zIndex: 6,
-          }}
-        >
-          26.2389° N — 73.0243° E // JAIPUR NODE ONLINE
-        </motion.div>
-      )}
 
       {/* Isolated styling for the engineering circuit logo — hero only */}
       <style>{`
