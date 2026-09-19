@@ -30,6 +30,7 @@ export default function TeamPage() {
         index="07"
         label="ORGANIZING TEAM"
         title={['THE MINDS BEHIND', 'THE MACHINE.']}
+        titleFont="Bleeding_Cowboys, sans-serif"
         accentIndex={1}
         intro="Faculty coordinators, student leads, technical crews, creative teams and volunteers keep the current running. Official names and roles are published by the organising committee."
         meta={['05 DIVISIONS', 'DETAILS COMING SOON']}

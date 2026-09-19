@@ -20,7 +20,7 @@
   --font-display: 'Unbounded', system-ui, sans-serif;
   --font-body: 'Space Grotesk', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
-  --nav-h: 76px;
+  --nav-h: 88px;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-exp: cubic-bezier(0.87, 0, 0.13, 1);
 }

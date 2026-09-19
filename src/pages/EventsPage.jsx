@@ -46,6 +46,7 @@ export default function EventsPage() {
         index="02"
         label="EVENT CATEGORIES"
         title={['EIGHT', 'ARENAS.']}
+        titleFont="Bleeding_Cowboys, sans-serif"
         accentIndex={1}
         intro="Eight battlegrounds of engineering across four days. Pick your current — individual event listings, rules and registrations unlock as they are released."
         meta={['08 ARENAS', '04 DAYS', 'LISTINGS COMING SOON']}

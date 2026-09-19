@@ -13,11 +13,11 @@ function DayCard({ day, isLast }) {
       className="day-card"
       style={{
         position: 'relative',
-        width: 'clamp(300px, 34vw, 460px)',
+        width: 'clamp(180px, 18vw, 280px)',
         flexShrink: 0,
-        padding: 'clamp(1.6rem, 2.6vw, 2.6rem)',
+        padding: 'clamp(1rem, 1.5vw, 1.6rem)',
         border: '1px solid var(--line)',
-        borderRadius: 24,
+        borderRadius: 18,
         background: 'linear-gradient(165deg, rgba(17,21,38,0.7), rgba(8,10,18,0.85))',
         backdropFilter: 'blur(12px)',
         transition: 'border-color 0.5s, transform 0.5s cubic-bezier(0.22,1,0.36,1), box-shadow 0.5s',
@@ -42,7 +42,7 @@ function DayCard({ day, isLast }) {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'baseline',
-          marginBottom: 'clamp(1.6rem, 3vw, 2.6rem)',
+          marginBottom: 'clamp(0.9rem, 1.8vw, 1.5rem)',
         }}
       >
         <span className="mono" style={{ fontSize: '0.66rem', letterSpacing: '0.3em', color: 'var(--muted)' }}>
@@ -54,21 +54,21 @@ function DayCard({ day, isLast }) {
         </span>
       </div>
 
-      <p className="display" style={{ fontSize: 'clamp(2.6rem, 4.6vw, 4.4rem)' }}>
+      <p className="display" style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.7rem)' }}>
         <span className="grad-text">{day.date}</span>
       </p>
       <p className="mono" style={{ fontSize: '0.66rem', letterSpacing: '0.34em', color: 'var(--cyan)', marginTop: '0.4rem' }}>
         {day.weekday}
       </p>
 
-      <p className="display" style={{ fontSize: 'clamp(1.05rem, 1.7vw, 1.5rem)', marginTop: 'clamp(1.4rem, 2.4vw, 2.2rem)', lineHeight: 1.2 }}>
+      <p className="display" style={{ fontSize: 'clamp(0.8rem, 1.1vw, 1.05rem)', marginTop: 'clamp(0.8rem, 1.4vw, 1.3rem)', lineHeight: 1.2 }}>
         {day.title}
       </p>
-      <p style={{ color: 'var(--muted)', fontSize: 'clamp(0.88rem, 1.05vw, 0.98rem)', marginTop: '0.8rem', lineHeight: 1.7 }}>
+      <p style={{ color: 'var(--muted)', fontSize: 'clamp(0.72rem, 0.85vw, 0.82rem)', marginTop: '0.6rem', lineHeight: 1.7 }}>
         {day.note}
       </p>
 
-      <div style={{ display: 'flex', gap: '1.2rem', marginTop: 'clamp(1.4rem, 2.2vw, 2rem)', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: '1.2rem', marginTop: 'clamp(0.8rem, 1.3vw, 1.2rem)', flexWrap: 'wrap' }}>
         <span className="mono" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', fontSize: '0.62rem', letterSpacing: '0.18em', color: 'var(--faint)' }}>
           <CalendarClock size={12} /> TIMINGS TBA
         </span>

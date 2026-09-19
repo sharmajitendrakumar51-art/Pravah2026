@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useScroll, useSpring, useTransform } from 'framer-motion';
 import { ArrowDown, ArrowUpRight, Zap } from 'lucide-react';
 
 // Code-split the WebGL scene so Three.js loads in its own chunk.
@@ -62,11 +62,35 @@ export default function Hero() {
   const typeOpacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
   const metaOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
+  // Cursor-reactive parallax for the PRAVAH wordmark.
+  const pointerX = useMotionValue(0);
+  const pointerY = useMotionValue(0);
+  const springCfg = { stiffness: 140, damping: 18, mass: 0.5 };
+  const logoRotateY = useSpring(useTransform(pointerX, [-0.5, 0.5], [-16, 16]), springCfg);
+  const logoRotateX = useSpring(useTransform(pointerY, [-0.5, 0.5], [11, -11]), springCfg);
+  const logoTranslateX = useSpring(useTransform(pointerX, [-0.5, 0.5], [-26, 26]), springCfg);
+  const logoTranslateY = useSpring(useTransform(pointerY, [-0.5, 0.5], [-16, 16]), springCfg);
+
+  const handlePointerMove = (e) => {
+    if (isMobile) return;
+    const el = sectionRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    pointerX.set((e.clientX - rect.left) / rect.width - 0.5);
+    pointerY.set((e.clientY - rect.top) / rect.height - 0.5);
+  };
+  const handlePointerLeave = () => {
+    pointerX.set(0);
+    pointerY.set(0);
+  };
+
   return (
     <section
       id="home"
       ref={sectionRef}
-      style={{ position: 'relative', height: '100svh', minHeight: '640px', overflow: 'hidden' }}
+      onMouseMove={handlePointerMove}
+      onMouseLeave={handlePointerLeave}
+      style={{ position: 'relative', height: isMobile ? 'auto' : '100svh', minHeight: isMobile ? '100svh' : '640px', overflow: 'hidden' }}
     >
       {/* Deep-space backdrop */}
       <div
@@ -100,18 +124,19 @@ export default function Hero() {
         style={{
           position: 'relative',
           zIndex: 5,
-          height: '100%',
+          height: isMobile ? 'auto' : '100%',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'flex-end',
-          paddingBottom: 'clamp(4.5rem, 9vh, 7rem)',
+          justifyContent: isMobile ? 'flex-start' : 'flex-end',
+          paddingTop: isMobile ? 'calc(var(--nav-h) + 1.25rem)' : undefined,
+          paddingBottom: isMobile ? '2.5rem' : 'clamp(4.5rem, 9vh, 7rem)',
           y: typeY,
           opacity: typeOpacity,
         }}
         className="container"
       >
         {/* Eyebrow */}
-        <motion.div style={{ opacity: metaOpacity, marginBottom: 'clamp(1.2rem, 3vh, 2.2rem)' }}>
+        <motion.div style={{ opacity: metaOpacity, marginBottom: isMobile ? '0.85rem' : 'clamp(1.2rem, 3vh, 2.2rem)' }}>
           <HeroLine delay={0.15}>
             <span
               className="mono"
@@ -126,7 +151,7 @@ export default function Hero() {
               }}
             >
               <Zap size={13} style={{ color: 'var(--cyan)' }} />
-              {FESTIVAL.type} — {FESTIVAL.host}
+              {FESTIVAL.type} — Swami Keshvanand Institute of Technology, Management & Gramothan, Jaipur
             </span>
           </HeroLine>
         </motion.div>
@@ -145,9 +170,23 @@ export default function Hero() {
               letterSpacing: '-0.015em',
             }}
           >
-            <span className="grad-text" style={{ filter: 'drop-shadow(0 0 34px rgba(139,92,246,0.35))' }}>
-              PRAVAH
-            </span>
+            <motion.img
+              src="/PRAVAH_exact_same_image.svg"
+              alt="PRAVAH"
+              style={{
+                display: 'block',
+                width: 'auto',
+                height: 'clamp(5.4rem, 19vw, 17.5rem)',
+                rotateX: logoRotateX,
+                rotateY: logoRotateY,
+                x: logoTranslateX,
+                y: logoTranslateY,
+                transformPerspective: 1000,
+                transformStyle: 'preserve-3d',
+                willChange: 'transform',
+                filter: 'drop-shadow(0 0 40px rgba(139,92,246,0.38))',
+              }}
+            />
           </HeroLine>
           <HeroLine delay={0.52} style={{ fontSize: 'clamp(2.2rem, 7vw, 6rem)' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '0.5em', flexWrap: 'wrap' }}>
@@ -200,6 +239,14 @@ export default function Hero() {
             </button>
           </div>
         </motion.div>
+
+        {/* Animated engineering circuit logo (right side / below content on mobile) */}
+        <img
+          className="hero-eng-logo"
+          src="/pravah-animated-engineering-logo.svg"
+          alt="PRAVAH animated engineering circuit logo"
+          aria-hidden="true"
+        />
       </motion.div>
 
       {/* Scroll cue */}
@@ -258,6 +305,31 @@ export default function Hero() {
           26.2389° N — 73.0243° E // JAIPUR NODE ONLINE
         </motion.div>
       )}
+
+      {/* Isolated styling for the engineering circuit logo — hero only */}
+      <style>{`
+        .hero-eng-logo {
+          position: absolute;
+          top: 50%;
+          right: clamp(0rem, 2vw, 2.4rem);
+          transform: translateY(-50%);
+          width: clamp(230px, 27vw, 430px);
+          height: auto;
+          pointer-events: none;
+          user-select: none;
+          z-index: -1;
+          filter: drop-shadow(0 0 40px rgba(32,168,202,0.22));
+        }
+        @media (max-width: 820px) {
+          .hero-eng-logo {
+            position: static;
+            transform: none;
+            z-index: auto;
+            margin: clamp(1.2rem, 3vh, 2rem) auto 0;
+            width: min(56vw, 220px);
+          }
+        }
+      `}</style>
     </section>
   );
 }

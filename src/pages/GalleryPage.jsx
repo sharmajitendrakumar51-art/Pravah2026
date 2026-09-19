@@ -192,6 +192,7 @@ export default function GalleryPage() {
         index="06"
         label="EVENT GALLERY"
         title={['MOMENTS', 'IN THE MAKING.']}
+        titleFont="Bleeding_Cowboys, sans-serif"
         accentIndex={1}
         intro="The visual archive of Tech Pravah 2026 — technology, innovation, competition and collaboration. Official photography publishes as the festival unfolds."
         meta={['04 CATEGORIES', 'MEDIA COMING SOON']}

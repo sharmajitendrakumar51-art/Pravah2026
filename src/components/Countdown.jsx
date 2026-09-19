@@ -117,10 +117,10 @@ export default function Countdown() {
                 {state.phase === 'live' ? (
                   <>
                     <span className="techpravah-countdown__pulse" style={{ display: 'inline-block', marginRight: '0.6rem' }} />
-                    {FESTIVAL.datesShort} — {FESTIVAL.host}
+                    {FESTIVAL.datesShort} — Swami Keshvanand Institute of Technology, Management & Gramothan, Jaipur
                   </>
                 ) : (
-                  `${FESTIVAL.datesShort} — ${FESTIVAL.host}`
+                  `${FESTIVAL.datesShort} — Swami Keshvanand Institute of Technology, Management & Gramothan, Jaipur`
                 )}
               </p>
             </div>

@@ -42,6 +42,7 @@ export default function PageHero({
   breadcrumb = [],
   children,
   compact = false,
+  titleFont,
 }) {
   const isMobile = useIsMobile();
 
@@ -146,6 +147,7 @@ export default function PageHero({
               ? 'clamp(2rem, 7vw, 6.2rem)'
               : 'clamp(2.6rem, 9.5vw, 8.6rem)',
             maxWidth: '18ch',
+            fontFamily: titleFont || undefined,
           }}
         >
           {title.map((line, i) => (

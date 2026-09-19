@@ -19,6 +19,7 @@ export default function WorkshopsPage() {
         index="04"
         label="WORKSHOPS & SEMINARS"
         title={['KNOWLEDGE', 'IN TRANSMISSION.']}
+        titleFont="Bleeding_Cowboys, sans-serif"
         accentIndex={1}
         intro="Connect with technology experts, researchers, entrepreneurs and industry leaders across the festival week. Session lineups are being finalised."
         meta={['14 OCT — WORKSHOP DAY', 'SESSIONS COMING SOON', 'SPEAKERS COMING SOON']}

@@ -90,6 +90,7 @@ export default function Navbar() {
         initial={{ y: -90, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.35, duration: 1, ease: EASE }}
+        className={`site-header${scrolled || !isHome ? ' is-scrolled' : ''}`}
         style={{
           position: 'fixed',
           top: 0,
@@ -97,48 +98,49 @@ export default function Navbar() {
           right: 0,
           zIndex: 1100,
           transition: 'background 0.5s, border-color 0.5s, backdrop-filter 0.5s',
-          background: scrolled || !isHome ? 'rgba(5, 6, 10, 0.62)' : 'transparent',
-          backdropFilter: scrolled || !isHome ? 'blur(18px)' : 'none',
-          WebkitBackdropFilter: scrolled || !isHome ? 'blur(18px)' : 'none',
-          borderBottom: `1px solid ${scrolled || !isHome ? 'var(--line)' : 'transparent'}`,
+          background: scrolled || !isHome ? 'rgba(6, 12, 26, 0.74)' : 'rgba(6, 12, 26, 0.34)',
+          backdropFilter: 'blur(18px)',
+          WebkitBackdropFilter: 'blur(18px)',
+          borderBottom: `1px solid ${scrolled || !isHome ? 'rgba(22,119,255,0.30)' : 'rgba(22,119,255,0.14)'}`,
         }}
       >
         <div
           className="container"
           style={{
             height: 'var(--nav-h)',
-            display: 'flex',
+            display: 'grid',
+            gridTemplateColumns: '1fr auto 1fr',
             alignItems: 'center',
-            justifyContent: 'space-between',
             gap: '1.5rem',
           }}
         >
           {/* Brand */}
           <Link
             to={ROUTES.home}
-            style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flexShrink: 0 }}
+            style={{ display: 'flex', alignItems: 'center', gap: '0.85rem', flexShrink: 0, gridColumn: 1, justifySelf: 'start' }}
             aria-label="Tech Pravah 2026 — home"
           >
             <span
               style={{
-                width: 42,
-                height: 42,
-                borderRadius: 12,
+                width: 50,
+                height: 50,
+                borderRadius: 16,
                 background: '#f4f6ff',
                 display: 'grid',
                 placeItems: 'center',
-                padding: 4,
-                boxShadow: scrolled ? '0 0 24px rgba(34,211,238,0.25)' : 'none',
-                transition: 'box-shadow 0.5s',
+                padding: 3,
+                border: '1px solid rgba(22,119,255,0.28)',
+                boxShadow: scrolled ? '0 0 22px rgba(22,119,255,0.35)' : '0 0 12px rgba(22,119,255,0.18)',
+                transition: 'box-shadow 0.5s, border-color 0.5s',
               }}
             >
               <img src="/skit-logo.png" alt="SKIT logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </span>
             <span style={{ textAlign: 'left', lineHeight: 1.15 }}>
-              <span className="display" style={{ fontSize: '0.95rem', letterSpacing: '0.08em', display: 'block' }}>
+              <span className="display" style={{ fontSize: '1.05rem', letterSpacing: '0.09em', display: 'block' }}>
                 PRAVAH <span className="grad-text">2026</span>
               </span>
-              <span className="mono" style={{ fontSize: '0.56rem', letterSpacing: '0.3em', color: 'var(--muted)', display: 'block' }}>
+              <span className="mono" style={{ fontSize: '0.6rem', letterSpacing: '0.3em', color: 'var(--muted)', display: 'block' }}>
                 {FESTIVAL.host}
               </span>
             </span>
@@ -149,9 +151,11 @@ export default function Navbar() {
             className="mono nav-desktop"
             style={{
               display: 'flex',
-              gap: 'clamp(0.9rem, 1.8vw, 1.8rem)',
-              fontSize: '0.68rem',
-              letterSpacing: '0.22em',
+              gap: 'clamp(0.3rem, 0.9vw, 0.75rem)',
+              fontSize: '0.74rem',
+              letterSpacing: '0.2em',
+              gridColumn: 2,
+              justifySelf: 'center',
             }}
             aria-label="Primary"
           >
@@ -162,39 +166,19 @@ export default function Navbar() {
                   key={item.id}
                   to={item.path}
                   onClick={handleNavClick(item)}
-                  style={{
-                    position: 'relative',
-                    padding: '0.4rem 0.1rem',
-                    color: active ? 'var(--cyan)' : 'var(--muted)',
-                    transition: 'color 0.35s',
-                    textTransform: 'uppercase',
-                    whiteSpace: 'nowrap',
-                  }}
+                  className={`nav-link${active ? ' is-active' : ''}`}
+                  aria-current={active ? 'page' : undefined}
                 >
                   {item.label}
-                  <span
-                    style={{
-                      position: 'absolute',
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      height: 1,
-                      background: 'var(--grad)',
-                      transform: active ? 'scaleX(1)' : 'scaleX(0)',
-                      transformOrigin: '0 50%',
-                      transition: 'transform 0.45s cubic-bezier(0.22,1,0.36,1)',
-                    }}
-                  />
                 </Link>
               );
             })}
           </nav>
 
           {/* CTA + mobile toggle */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexShrink: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexShrink: 0, gridColumn: 3, justifySelf: 'end' }}>
             <Link
-              className="btn btn-solid nav-cta"
-              style={{ padding: '0.72rem 1.4rem', fontSize: '0.68rem' }}
+              className="nav-btn nav-register nav-cta"
               to={ROUTES.register}
             >
               REGISTER
@@ -207,10 +191,12 @@ export default function Navbar() {
               aria-expanded={open}
               style={{
                 display: 'none',
-                width: 44,
-                height: 44,
+                width: 46,
+                height: 46,
                 borderRadius: 12,
-                border: '1px solid var(--line-strong)',
+                border: '1px solid rgba(22,119,255,0.45)',
+                background: 'rgba(22,119,255,0.08)',
+                boxShadow: '0 0 16px rgba(22,119,255,0.25)',
                 placeItems: 'center',
                 position: 'relative',
                 zIndex: 1300,
@@ -288,7 +274,7 @@ export default function Navbar() {
                         fontSize: 'clamp(1.5rem, 6.4vw, 3rem)',
                         textTransform: 'uppercase',
                         lineHeight: 1.28,
-                        color: isActive(item) ? 'var(--cyan)' : 'var(--ink)',
+                        color: isActive(item) ? '#1677FF' : 'var(--ink)',
                         transition: 'color 0.3s',
                       }}
                     >
@@ -346,7 +332,7 @@ export default function Navbar() {
                   {FESTIVAL.tagline[0]} {FESTIVAL.tagline[1]}
                 </p>
               </div>
-              <button className="btn btn-solid" onClick={() => goRoute(ROUTES.register)}>
+              <button className="nav-btn nav-register" onClick={() => goRoute(ROUTES.register)}>
                 REGISTER NOW
                 <ArrowUpRight size={14} />
               </button>
@@ -356,11 +342,90 @@ export default function Navbar() {
       </AnimatePresence>
 
       <style>{`
+        .site-header::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -1px;
+          height: 1px;
+          background: linear-gradient(90deg, transparent 6%, rgba(0,102,255,0.45), rgba(22,119,255,0.6), rgba(0,102,255,0.45), transparent 94%);
+          opacity: 0;
+          transition: opacity 0.6s var(--ease-out);
+          pointer-events: none;
+        }
+        .site-header.is-scrolled::after { opacity: 1; }
+
+        .nav-link {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          padding: 0.6rem 1.15rem;
+          border-radius: 999px;
+          color: rgba(207,222,255,0.7);
+          border: 1px solid transparent;
+          background: transparent;
+          text-transform: uppercase;
+          white-space: nowrap;
+          transition: color 0.3s var(--ease-out), border-color 0.3s var(--ease-out), background 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+        }
+        .nav-link:hover {
+          color: #eaf2ff;
+          border-color: rgba(22,119,255,0.5);
+          background: rgba(22,119,255,0.08);
+          box-shadow: 0 0 16px rgba(22,119,255,0.3);
+          transform: translateY(-1px);
+        }
+        .nav-link.is-active {
+          color: #ffffff;
+          border-color: rgba(22,119,255,0.9);
+          background: rgba(22,119,255,0.14);
+          box-shadow: 0 0 22px rgba(22,119,255,0.5), inset 0 0 12px rgba(22,119,255,0.18);
+        }
+
+        .nav-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          border-radius: 999px;
+          font-family: var(--font-mono);
+          font-size: 0.72rem;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          white-space: nowrap;
+          cursor: pointer;
+          transition: color 0.3s var(--ease-out), border-color 0.3s var(--ease-out), background 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+        }
+        .nav-login {
+          padding: 0.72rem 1.35rem;
+          color: #cfe0ff;
+          border: 1px solid rgba(22,119,255,0.5);
+          background: rgba(22,119,255,0.06);
+        }
+        .nav-login:hover {
+          color: #ffffff;
+          border-color: #1677FF;
+          background: rgba(22,119,255,0.16);
+          box-shadow: 0 0 20px rgba(22,119,255,0.5);
+          transform: translateY(-1px);
+        }
+        .nav-register {
+          padding: 0.78rem 1.5rem;
+          color: #ffffff;
+          border: 1px solid rgba(120,180,255,0.7);
+          background: linear-gradient(120deg, #0066FF 0%, #1677FF 100%);
+          box-shadow: 0 0 18px rgba(22,119,255,0.4);
+        }
+        .nav-register:hover {
+          box-shadow: 0 0 28px rgba(22,119,255,0.65);
+          transform: translateY(-1px);
+        }
+
         @media (max-width: 1180px) {
           .nav-desktop { display: none !important; }
           .nav-burger { display: grid !important; }
         }
-        @media (max-width: 520px) {
+        @media (max-width: 640px) {
           .nav-cta { display: none !important; }
         }
       `}</style>

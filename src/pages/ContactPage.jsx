@@ -51,6 +51,7 @@ export default function ContactPage() {
         index="11"
         label="CONTACT"
         title={['GET IN', 'TOUCH.']}
+        titleFont="Bleeding_Cowboys, sans-serif"
         accentIndex={1}
         intro="Direct lines to the Tech Pravah 2026 control room open soon. The festival is hosted on the SKIT Jaipur campus — institutional details are below."
         meta={['SKIT JAIPUR', FESTIVAL.datesShort, 'CONTACT DETAILS COMING SOON']}

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" role="img" aria-labelledby="title desc">
+<title id="title">Technical festival circuit logo</title>
+<desc id="desc">Animated engineering circuit logo with six independent terminal icons and a rotating central infinity symbol.</desc>
+<defs>
+ <radialGradient id="coreGlow"><stop offset="0" stop-color="#fff"/><stop offset=".63" stop-color="#edffff"/><stop offset=".84" stop-color="#acecf3"/><stop offset="1" stop-color="#20a8ca"/></radialGradient>
+
+<style><![CDATA[
+  /* Built-in animation. Keep the SVG inline or load with <object> to target these IDs from JS/GSAP. */
+  #infinity {
+    transform-box: view-box;
+    transform-origin: 300px 360px;
+    animation: infinitySpin 7s linear infinite;
+    will-change: transform;
+  }
+
+  .terminal-icon {
+    animation: terminalPulse 2.6s ease-in-out infinite;
+    will-change: opacity, filter;
+  }
+  #icon-0 { --terminal-color: #ef9b20; animation-delay: 0s; }
+  #icon-1 { --terminal-color: #79b33e; animation-delay: -0.43s; }
+  #icon-2 { --terminal-color: #20a3ad; animation-delay: -0.86s; }
+  #icon-3 { --terminal-color: #163d60; animation-delay: -1.29s; }
+  #icon-4 { --terminal-color: #087cab; animation-delay: -1.72s; }
+  #icon-5 { --terminal-color: #873293; animation-delay: -2.15s; }
+
+  @keyframes infinitySpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  @keyframes terminalPulse {
+    0%   { opacity: 0.7;  filter: drop-shadow(0 0 0px var(--terminal-color)); }
+    15%  { opacity: 0.96; filter: drop-shadow(0 0 6px var(--terminal-color)); }
+    23%  { opacity: 0.78; filter: drop-shadow(0 0 3px var(--terminal-color)); }
+    50%  { opacity: 1;    filter: drop-shadow(0 0 9px var(--terminal-color)); }
+    63%  { opacity: 0.85; filter: drop-shadow(0 0 5px var(--terminal-color)); }
+    100% { opacity: 0.7;  filter: drop-shadow(0 0 0px var(--terminal-color)); }
+  }
+
+  /* Light particle that flows along each circuit toward its terminal. */
+  .flow-dot {
+    will-change: transform, opacity;
+    filter: drop-shadow(0 0 6px currentColor) drop-shadow(0 0 2px #fff);
+  }
+
+  /* Optional interaction when the SVG is inline / embedded as an object. */
+  .terminal-icon:hover {
+    opacity: 1;
+    filter: drop-shadow(0 0 12px var(--terminal-color));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #infinity, .terminal-icon { animation: none !important; }
+    .flow-dot { display: none; }
+  }
+]]></style>
+</defs>
+<g id="logo-art">
+<g id="circuits" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+<g id="branch-0" stroke="#ef9b20" transform="rotate(0 300 360)">
+<circle class="flow-dot" r="3.6" fill="#fff" stroke="none" style="color:#ef9b20"><animateMotion dur="3.2s" begin="0s" repeatCount="indefinite" path="M275 291 Q298 265 298 237 V109"/><animate attributeName="opacity" dur="3.2s" begin="0s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.18;0.72;1"/></circle>
+<path d="M250 298 Q278 271 278 239 V174 L261 157 V128 M262 296 Q288 270 288 240 V151 M275 291 Q298 265 298 237 V109 M289 287 Q308 263 308 235 V162 M302 287 Q318 263 318 239 V186 L337 166 V130"/>
+<g fill="white" stroke-width="4"><circle cx="261" cy="128" r="5"/><circle cx="288" cy="151" r="5"/><circle cx="308" cy="162" r="5"/><circle cx="337" cy="130" r="5"/></g></g>
+<g id="branch-1" stroke="#79b33e" transform="rotate(60 300 360)">
+<circle class="flow-dot" r="3.6" fill="#fff" stroke="none" style="color:#79b33e"><animateMotion dur="3.4s" begin="-0.6s" repeatCount="indefinite" path="M275 291 Q298 265 298 237 V109"/><animate attributeName="opacity" dur="3.4s" begin="-0.6s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.18;0.72;1"/></circle>
+<path d="M250 298 Q278 271 278 239 V174 L261 157 V128 M262 296 Q288 270 288 240 V151 M275 291 Q298 265 298 237 V109 M289 287 Q308 263 308 235 V162 M302 287 Q318 263 318 239 V186 L337 166 V130"/>
+<g fill="white" stroke-width="4"><circle cx="261" cy="128" r="5"/><circle cx="288" cy="151" r="5"/><circle cx="308" cy="162" r="5"/><circle cx="337" cy="130" r="5"/></g></g>
+<g id="branch-2" stroke="#20a3ad" transform="rotate(120 300 360)">
+<circle class="flow-dot" r="3.6" fill="#fff" stroke="none" style="color:#20a3ad"><animateMotion dur="3.0s" begin="-1.1s" repeatCount="indefinite" path="M275 291 Q298 265 298 237 V109"/><animate attributeName="opacity" dur="3.0s" begin="-1.1s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.18;0.72;1"/></circle>
+<path d="M250 298 Q278 271 278 239 V174 L261 157 V128 M262 296 Q288 270 288 240 V151 M275 291 Q298 265 298 237 V109 M289 287 Q308 263 308 235 V162 M302 287 Q318 263 318 239 V186 L337 166 V130"/>
+<g fill="white" stroke-width="4"><circle cx="261" cy="128" r="5"/><circle cx="288" cy="151" r="5"/><circle cx="308" cy="162" r="5"/><circle cx="337" cy="130" r="5"/></g></g>
+<g id="branch-3" stroke="#163d60" transform="rotate(180 300 360)">
+<circle class="flow-dot" r="3.6" fill="#fff" stroke="none" style="color:#3f9bd6"><animateMotion dur="3.5s" begin="-1.7s" repeatCount="indefinite" path="M275 291 Q298 265 298 237 V109"/><animate attributeName="opacity" dur="3.5s" begin="-1.7s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.18;0.72;1"/></circle>
+<path d="M250 298 Q278 271 278 239 V174 L261 157 V128 M262 296 Q288 270 288 240 V151 M275 291 Q298 265 298 237 V109 M289 287 Q308 263 308 235 V162 M302 287 Q318 263 318 239 V186 L337 166 V130"/>
+<g fill="white" stroke-width="4"><circle cx="261" cy="128" r="5"/><circle cx="288" cy="151" r="5"/><circle cx="308" cy="162" r="5"/><circle cx="337" cy="130" r="5"/></g></g>
+<g id="branch-4" stroke="#087cab" transform="rotate(240 300 360)">
+<circle class="flow-dot" r="3.6" fill="#fff" stroke="none" style="color:#087cab"><animateMotion dur="3.1s" begin="-2.2s" repeatCount="indefinite" path="M275 291 Q298 265 298 237 V109"/><animate attributeName="opacity" dur="3.1s" begin="-2.2s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.18;0.72;1"/></circle>
+<path d="M250 298 Q278 271 278 239 V174 L261 157 V128 M262 296 Q288 270 288 240 V151 M275 291 Q298 265 298 237 V109 M289 287 Q308 263 308 235 V162 M302 287 Q318 263 318 239 V186 L337 166 V130"/>
+<g fill="white" stroke-width="4"><circle cx="261" cy="128" r="5"/><circle cx="288" cy="151" r="5"/><circle cx="308" cy="162" r="5"/><circle cx="337" cy="130" r="5"/></g></g>
+<g id="branch-5" stroke="#873293" transform="rotate(300 300 360)">
+<circle class="flow-dot" r="3.6" fill="#fff" stroke="none" style="color:#b455c4"><animateMotion dur="3.3s" begin="-2.7s" repeatCount="indefinite" path="M275 291 Q298 265 298 237 V109"/><animate attributeName="opacity" dur="3.3s" begin="-2.7s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.18;0.72;1"/></circle>
+<path d="M250 298 Q278 271 278 239 V174 L261 157 V128 M262 296 Q288 270 288 240 V151 M275 291 Q298 265 298 237 V109 M289 287 Q308 263 308 235 V162 M302 287 Q318 263 318 239 V186 L337 166 V130"/>
+<g fill="white" stroke-width="4"><circle cx="261" cy="128" r="5"/><circle cx="288" cy="151" r="5"/><circle cx="308" cy="162" r="5"/><circle cx="337" cy="130" r="5"/></g></g>
+</g><g id="department-icons" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+<g id="icon-0" class="terminal-icon" data-terminal="idea-lightbulb" stroke="#ef9b20" transform="rotate(0 300 360)"><g transform="translate(300 64) rotate(-0)"><circle r="43"/><path d="M-14-6 C-14-27 14-27 14-6 C14 3 6 5 6 13 H-6 C-6 5-14 3-14-6 Z M-6 18 H6 M-3 23 H3 M0-32 V-37 M-24-22 L-28-26 M24-22 L28-26 M-24-3 H-30 M24-3 H30 M0 10 V-7 M-5-12 L0-7 L5-12"/></g></g>
+<g id="icon-1" class="terminal-icon" data-terminal="programming-code" stroke="#79b33e" transform="rotate(60 300 360)"><g transform="translate(300 64) rotate(-60)"><circle r="43"/><path d="M-13-12 L-27 0 L-13 12 M13-12 L27 0 L13 12 M7-20 L-7 20"/></g></g>
+<g id="icon-2" class="terminal-icon" data-terminal="electrical-energy" stroke="#20a3ad" transform="rotate(120 300 360)"><g transform="translate(300 64) rotate(-120)"><circle r="43"/><path d="M0-6 L-13 27 H13 Z M-7 13 H7 M-13 27 L7 13 M13 27 L-7 13 M-9-17 Q-17-7-9 3 M9-17 Q17-7 9 3 M-16-23 Q-28-7-16 10 M16-23 Q28-7 16 10"/><circle cy="-8" r="4"/></g></g>
+<g id="icon-3" class="terminal-icon" data-terminal="civil-structure" stroke="#163d60" transform="rotate(180 300 360)"><g transform="translate(300 64) rotate(-180)"><circle r="43"/><path d="M-30 11 H30 M-21-13 V23 M21-13 V23 M-27 11 Q-13 7-21-13 Q0 10 21-13 Q15 7 27 11 M-13 3 V11 M-5 6 V11 M5 6 V11 M13 3 V11"/></g></g>
+<g id="icon-4" class="terminal-icon" data-terminal="mechanical-gear" stroke="#087cab" transform="rotate(240 300 360)"><g transform="translate(300 64) rotate(-240)"><circle r="43"/><path d="M-7-26 H7 L9-18 L15-15 L23-17 L29-6 L23 0 L23 7 L29 13 L22 24 L14 21 L7 24 L5 31 H-7 L-9 23 L-15 20 L-23 22 L-29 11 L-23 5 V-2 L-29-8 L-22-19 L-14-16 L-8-19 Z"/><circle cy="2" r="11"/></g></g>
+<g id="icon-5" class="terminal-icon" data-terminal="embedded-microchip" stroke="#873293" transform="rotate(300 300 360)"><g transform="translate(300 64) rotate(-300)"><circle r="43"/><rect x="-19" y="-19" width="38" height="38" rx="2"/><rect x="-12" y="-12" width="24" height="24"/><path d="M-12-25 V-31 M-4-25 V-31 M4-25 V-31 M12-25 V-31 M-12 25 V31 M-4 25 V31 M4 25 V31 M12 25 V31 M-25-12 H-31 M-25-4 H-31 M-25 4 H-31 M-25 12 H-31 M25-12 H31 M25-4 H31 M25 4 H31 M25 12 H31"/></g></g>
+</g>
+<g id="core" data-part="center-core"><circle cx="300" cy="360" r="83" fill="url(#coreGlow)" stroke="#d9faff" stroke-width="5"/><circle cx="300" cy="360" r="91" fill="none" stroke="#50c6d8" stroke-opacity=".45" stroke-width="2"/></g>
+<g id="infinity" class="infinity-rotator" data-part="infinity" fill="none" stroke="#083954" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+<path d="M300 360 C278 329 249 329 249 360 C249 391 278 391 300 360 C322 329 351 329 351 360 C351 391 322 391 300 360 Z"/>
+</g></g></svg>

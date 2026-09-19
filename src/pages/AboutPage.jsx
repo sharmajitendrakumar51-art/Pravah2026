@@ -19,6 +19,7 @@ export default function AboutPage() {
         index="01"
         label="ABOUT TECH PRAVAH"
         title={['THE FLOW', 'BEGINS HERE.']}
+        titleFont="Bleeding_Cowboys, sans-serif"
         accentIndex={1}
         intro={`${FESTIVAL.name} ${FESTIVAL.edition} is the flagship technical festival of SKIT Jaipur — four days where engineering stops being coursework and becomes a movement.`}
         meta={[FESTIVAL.dates, 'FOUR DAYS', 'EIGHT ARENAS']}

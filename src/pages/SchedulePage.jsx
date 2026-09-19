@@ -22,6 +22,7 @@ export default function SchedulePage() {
         index="03"
         label="FESTIVAL SCHEDULE"
         title={['FOUR DAYS', 'OF FLOW.']}
+        titleFont="Bleeding_Cowboys, sans-serif"
         accentIndex={1}
         intro="From the inauguration on 12 October to the Grand Finale on 15 October — the four-day arc of Tech Pravah 2026. Slot-wise timings are released with the detailed schedule."
         meta={[FESTIVAL.dates, '04 DAYS', 'TIMINGS COMING SOON']}

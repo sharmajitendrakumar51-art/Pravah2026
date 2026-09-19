@@ -82,7 +82,7 @@ export default function Register() {
 
         <Reveal delay={0.4}>
           <p className="mono" style={{ marginTop: 'clamp(2rem, 4vw, 3rem)', fontSize: '0.68rem', letterSpacing: '0.32em', color: 'var(--faint)', textTransform: 'uppercase' }}>
-            {FESTIVAL.datesShort} // {FESTIVAL.host}
+            {FESTIVAL.datesShort} // Swami Keshvanand Institute of Technology, Management & Gramothan, Jaipur
           </p>
         </Reveal>
       </div>
