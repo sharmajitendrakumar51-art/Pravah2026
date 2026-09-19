@@ -1,0 +1,38 @@
+.logo-scene {
+  position: relative;
+  aspect-ratio: 1;
+  perspective: 1000px;
+  perspective-origin: 50% 49.8405%;
+}
+
+.logo-base,
+.infinity-tilt,
+.infinity-spin,
+.infinity-depth,
+.infinity-front {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 49.8405%;
+}
+
+.infinity-tilt,
+.infinity-spin {
+  transform-style: preserve-3d;
+}
+
+.infinity-depth {
+  transform: translateZ(-4px);
+  opacity: 0.48;
+  filter: brightness(0.55) saturate(1.5);
+}
+
+.infinity-front {
+  transform: translateZ(1px);
+}
+
+.logo-scene svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}

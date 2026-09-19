@@ -178,7 +178,7 @@ export default function App() {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
               <Routes location={location}>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home active={revealed || introDone} />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/events" element={<EventsPage />} />
                 <Route path="/events/:slug" element={<EventDetailPage />} />

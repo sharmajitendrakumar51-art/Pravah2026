@@ -1,4 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1254 1254" width="4096" height="4096" fill="none" role="img" aria-labelledby="logo-title logo-description">
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Infinity Tech — vector layer preview</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#080f18;color:#e4edf5;font-family:Arial,sans-serif}main{max-width:1100px;margin:auto;padding:24px}h1{font-size:24px;margin:0 0 10px}p{color:#a6b8c7;font-size:14px;line-height:1.6}.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:20px 0}label{font-size:13px;display:flex;gap:8px;align-items:center}button,select{font:inherit;padding:11px 14px;background:#18283b;color:#e4edf5;border:1px solid #3c5064;border-radius:6px;cursor:pointer}.stage{background:#030b14;border:1px solid #24374c;border-radius:12px;display:grid;place-items:center;overflow:hidden}.stage.light{background:#f3f6fa}.stage.checker{background-color:#fff;background-image:linear-gradient(45deg,#d8e0e7 25%,transparent 25%),linear-gradient(-45deg,#d8e0e7 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#d8e0e7 75%),linear-gradient(-45deg,transparent 75%,#d8e0e7 75%);background-size:28px 28px;background-position:0 0,0 14px,14px -14px,-14px 0}.stage>svg{width:min(100%,850px);height:auto;display:block}.links{display:flex;gap:20px;flex-wrap:wrap}a{color:#66ddeb}#status{min-height:22px;font-size:13px;color:#9fc4d7}@media(max-width:600px){main{padding:16px}button,select{max-width:100%}}
+</style></head><body><main>
+<h1>Infinity Tech — editable vector master</h1>
+<p>Transparent artwork · 4096 × 4096 intrinsic size · 1254 × 1254 viewBox · centre (627, 625)</p>
+<div class="controls"><label>Layer <select id="layer"></select></label><button id="toggle">Hide selected</button><button id="rotate">Rotate selected 360°</button><button id="reset">Reset</button><label>Background <select id="background"><option value="dark">Dark</option><option value="light">Light</option><option value="checker">Transparency grid</option></select></label></div>
+<p id="status" aria-live="polite">All layers visible. No automatic animation.</p>
+<div class="stage" id="stage"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1254 1254" width="4096" height="4096" fill="none" role="img" aria-labelledby="logo-title logo-description">
 <title id="logo-title">Infinity technology festival logo</title>
 <desc id="logo-description">Pure vector recreation: six separate engineering branches and icons surrounding independent cyan rings and a luminous infinity. Transparent background; static by default.</desc>
 <defs>
@@ -208,7 +217,7 @@
 <path id="chip-pin-left-1" d="M -44 -21 H -55" stroke-width="5"/>
 <path id="chip-pin-right-1" d="M 44 -21 H 55" stroke-width="5"/>
 <path id="chip-pin-top-2" d="M -7 -44 V -55" stroke-width="5"/>
-<path id="chip-pin-bottom-2" d="M -7 44 V -55" stroke-width="5"/>
+<path id="chip-pin-bottom-2" d="M -7 44 V 55" stroke-width="5"/>
 <path id="chip-pin-left-2" d="M -44 -7 H -55" stroke-width="5"/>
 <path id="chip-pin-right-2" d="M 44 -7 H 55" stroke-width="5"/>
 <path id="chip-pin-top-3" d="M 7 -44 V -55" stroke-width="5"/>
@@ -404,4 +413,19 @@
 <path id="infinity-highlight" d="M 627 625 C 581 568 551 541 515 568 C 473 600 491 677 538 678 C 573 679 596 650 627 625 C 665 593 696 553 730 568 C 781 590 765 672 720 679 C 684 685 655 655 627 625 Z" stroke="#c9ffff" stroke-width="1.8" opacity=".7"/>
 </g>
 </g>
-</svg>
+</svg></div>
+<p>The master is static so your application controls motion. Rotate the infinity or a ring without moving the branches; hide a layer to check that no duplicate remains underneath.</p>
+<div class="links"><a href="infinity-tech-master.svg" download>SVG master</a><a href="InfinityTechLogo.jsx" download>React component</a><a href="infinity-tech-4096.png" download>4096px PNG</a><a href="README.md">Layer and integration notes</a></div>
+</main><script>
+const stage=document.getElementById('stage');const select=document.getElementById('layer');const status=document.getElementById('status');const hide=document.getElementById('toggle');let animation;
+const groups=[...stage.querySelectorAll('[data-part]')];for(const node of groups){if(node.id.endsWith('-position'))continue;const option=document.createElement('option');option.value=node.id;option.textContent=node.id;select.append(option);}select.value='infinity';
+function selected(){return stage.querySelector('[id="'+select.value+'"]')}
+function update(){hide.textContent=selected().style.visibility==='hidden'?'Show selected':'Hide selected'}
+select.addEventListener('change',update);
+hide.addEventListener('click',()=>{const node=selected();node.style.visibility=node.style.visibility==='hidden'?'visible':'hidden';update();status.textContent=select.value+': '+(node.style.visibility==='hidden'?'hidden':'visible')});
+document.getElementById('rotate').addEventListener('click',()=>{if(animation)animation.cancel();const node=selected();node.style.visibility='visible';update();const x=node.dataset.centerX,y=node.dataset.centerY;if(x&&y){node.style.transformBox='view-box';node.style.transformOrigin=x+'px '+y+'px'}else{node.style.transformBox='fill-box';node.style.transformOrigin='center'}animation=node.animate([{transform:'rotate(0deg)'},{transform:'rotate(360deg)'}],{duration:matchMedia('(prefers-reduced-motion: reduce)').matches?1:3000,easing:'ease-in-out'});status.textContent='Rotating '+select.value+' only.';animation.onfinish=()=>{status.textContent='Rotation complete. '+select.value+' returned to its starting position.'}});
+document.getElementById('reset').addEventListener('click',()=>{if(animation)animation.cancel();groups.forEach(node=>{node.style.visibility='';node.style.transform=''});update();status.textContent='All layers visible. No automatic animation.'});
+document.getElementById('background').addEventListener('change',event=>{stage.className='stage '+event.target.value});
+</script></body></html>
+
+

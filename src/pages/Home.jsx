@@ -17,10 +17,10 @@ import Contact from '../sections/Contact';
 // festival's cinematic entry point while dedicated routes handle
 // depth for each section.
 // ============================================================
-export default function Home() {
+export default function Home({ active = true }) {
   return (
     <>
-      <Hero />
+      <Hero active={active} />
       <Marquee />
       <Countdown />
       <About />

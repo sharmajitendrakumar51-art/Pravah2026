@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 import FestivalLogo from './FestivalLogo';
-import { INTRO, LOGO_VIEWBOX } from '../../lib/festival-animation-config';
+import { INTRO, LOGO_VIEWBOX, LOGO_CORE } from '../../lib/festival-animation-config';
 import './festival-intro.css';
 
 // ============================================================
@@ -140,7 +140,7 @@ export default function FestivalIntro({ onReveal, onComplete, config = INTRO }) 
 
         // Scale about the core origin set by layout() — core stays centred.
         gsap.set(stage, { scale: 0.88, autoAlpha: 0 });
-        if (infinity) gsap.set(infinity, { rotation: 0, svgOrigin: `${300} ${360}` });
+        if (infinity) gsap.set(infinity, { rotation: 0, svgOrigin: `${LOGO_CORE.x} ${LOGO_CORE.y}` });
 
         const tl = gsap.timeline({ onComplete: finalize });
         tlRef.current = tl;

@@ -4,6 +4,7 @@ import { ArrowDown, ArrowUpRight, Zap } from 'lucide-react';
 
 // Code-split the WebGL scene so Three.js loads in its own chunk.
 const HeroScene = lazy(() => import('../components/three/HeroScene'));
+import LandingLogoMotion from '../components/LandingLogoMotion';
 import { FESTIVAL } from '../data/content';
 import { scrollToSection } from '../lib/scroll';
 import { useIsMobile } from '../hooks/useMediaQuery';
@@ -26,7 +27,7 @@ function HeroLine({ children, delay, className = '', style = {} }) {
   );
 }
 
-export default function Hero() {
+export default function Hero({ active = true }) {
   const isMobile = useIsMobile();
   const sectionRef = useRef(null);
   const sceneScroll = useRef(0);
@@ -239,12 +240,11 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Animated engineering circuit logo (right side / below content on mobile) */}
-        <img
+        {/* Pure vector engineering circuit logo with GSAP motion */}
+        <LandingLogoMotion
           className="hero-eng-logo"
-          src="/pravah-animated-engineering-logo.svg"
-          alt="PRAVAH animated engineering circuit logo"
-          aria-hidden="true"
+          active={active}
+          size={512}
         />
       </motion.div>
 

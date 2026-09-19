@@ -208,7 +208,7 @@
 <path id="chip-pin-left-1" d="M -44 -21 H -55" stroke-width="5"/>
 <path id="chip-pin-right-1" d="M 44 -21 H 55" stroke-width="5"/>
 <path id="chip-pin-top-2" d="M -7 -44 V -55" stroke-width="5"/>
-<path id="chip-pin-bottom-2" d="M -7 44 V -55" stroke-width="5"/>
+<path id="chip-pin-bottom-2" d="M -7 44 V 55" stroke-width="5"/>
 <path id="chip-pin-left-2" d="M -44 -7 H -55" stroke-width="5"/>
 <path id="chip-pin-right-2" d="M 44 -7 H 55" stroke-width="5"/>
 <path id="chip-pin-top-3" d="M 7 -44 V -55" stroke-width="5"/>

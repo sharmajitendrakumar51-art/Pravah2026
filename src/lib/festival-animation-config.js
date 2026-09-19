@@ -42,5 +42,5 @@ export const INTRO = {
 // The core is at the geometric centre of the viewBox (300/600, 360/720)
 // = (0.5, 0.5), which is why a centred wrapper can zoom from its own
 // centre and keep the core locked to the viewport centre.
-export const LOGO_VIEWBOX = { width: 600, height: 720 };
-export const LOGO_CORE = { x: 300, y: 360 };
+export const LOGO_VIEWBOX = { width: 1254, height: 1254 };
+export const LOGO_CORE = { x: 627, y: 625 };
