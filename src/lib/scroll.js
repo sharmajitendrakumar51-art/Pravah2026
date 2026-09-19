@@ -10,7 +10,7 @@ export function getLenis() {
   return typeof window !== 'undefined' ? window.__lenis : null;
 }
 
-export function scrollToSection(target, offset = -72) {
+export function scrollToSection(target, offset = -88) {
   const lenis = getLenis();
   const el = typeof target === 'string' ? document.querySelector(target) : target;
   if (!el) return;

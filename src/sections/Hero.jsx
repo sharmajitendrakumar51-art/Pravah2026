@@ -90,7 +90,7 @@ export default function Hero() {
       ref={sectionRef}
       onMouseMove={handlePointerMove}
       onMouseLeave={handlePointerLeave}
-      style={{ position: 'relative', height: isMobile ? 'auto' : '100svh', minHeight: isMobile ? '100svh' : '640px', overflow: 'hidden' }}
+      style={{ position: 'relative', minHeight: isMobile ? '100svh' : '100svh', height: isMobile ? 'auto' : '100svh', overflow: 'hidden' }}
     >
       {/* Deep-space backdrop */}
       <div
@@ -127,16 +127,16 @@ export default function Hero() {
           height: isMobile ? 'auto' : '100%',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: isMobile ? 'flex-start' : 'flex-end',
-          paddingTop: isMobile ? 'calc(var(--nav-h) + 1.25rem)' : undefined,
-          paddingBottom: isMobile ? '2.5rem' : 'clamp(4.5rem, 9vh, 7rem)',
+          justifyContent: isMobile ? 'flex-start' : 'center',
+          paddingTop: 'calc(var(--nav-h) + clamp(0.1rem, 0.6vh, 0.4rem))',
+          paddingBottom: isMobile ? '2.5rem' : 'clamp(1.5rem, 3.5vh, 2.8rem)',
           y: typeY,
           opacity: typeOpacity,
         }}
         className="container"
       >
         {/* Eyebrow */}
-        <motion.div style={{ opacity: metaOpacity, marginBottom: isMobile ? '0.85rem' : 'clamp(1.2rem, 3vh, 2.2rem)' }}>
+        <motion.div style={{ opacity: metaOpacity, marginBottom: isMobile ? '0.85rem' : 'clamp(0.7rem, 2.2vh, 1.6rem)' }}>
           <HeroLine delay={0.15}>
             <span
               className="mono"
@@ -158,13 +158,13 @@ export default function Hero() {
 
         {/* Monumental wordmark */}
         <h1 className="display" style={{ userSelect: 'none' }}>
-          <HeroLine delay={0.28} className="outline-text" style={{ fontSize: 'clamp(2.2rem, 7vw, 6rem)' }}>
+          <HeroLine delay={0.28} className="outline-text" style={{ fontSize: 'clamp(2.4rem, 6.4vw, 5.4rem)' }}>
             TECH
           </HeroLine>
           <HeroLine
             delay={0.4}
             style={{
-              fontSize: 'clamp(4.2rem, 15.5vw, 14.5rem)',
+              fontSize: 'clamp(4.2rem, 17.5vw, 16.8rem)',
               fontWeight: 900,
               lineHeight: 0.92,
               letterSpacing: '-0.015em',
@@ -176,7 +176,7 @@ export default function Hero() {
               style={{
                 display: 'block',
                 width: 'auto',
-                height: 'clamp(5.4rem, 19vw, 17.5rem)',
+                height: 'clamp(5.2rem, 17.5vw, 16.8rem)',
                 rotateX: logoRotateX,
                 rotateY: logoRotateY,
                 x: logoTranslateX,
@@ -188,7 +188,7 @@ export default function Hero() {
               }}
             />
           </HeroLine>
-          <HeroLine delay={0.52} style={{ fontSize: 'clamp(2.2rem, 7vw, 6rem)' }}>
+          <HeroLine delay={0.52} style={{ fontSize: 'clamp(2.4rem, 6.4vw, 5.4rem)' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '0.5em', flexWrap: 'wrap' }}>
               <span className="outline-text">20</span>
               <span>26</span>
@@ -219,11 +219,11 @@ export default function Hero() {
             flexWrap: 'wrap',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: '2rem',
-            marginTop: 'clamp(1.8rem, 4vh, 3rem)',
+            gap: '1.6rem',
+            marginTop: 'clamp(1rem, 2.2vh, 1.8rem)',
           }}
         >
-          <p className="mono" style={{ fontSize: 'clamp(0.8rem, 1.4vw, 1rem)', letterSpacing: '0.18em', color: 'var(--muted)', lineHeight: 2 }}>
+          <p className="mono" style={{ fontSize: 'clamp(0.8rem, 1.3vw, 0.96rem)', letterSpacing: '0.18em', color: 'var(--muted)', lineHeight: 1.8 }}>
             {FESTIVAL.tagline[0]}
             <br />
             <span style={{ color: 'var(--ink)' }}>{FESTIVAL.tagline[1]}</span>

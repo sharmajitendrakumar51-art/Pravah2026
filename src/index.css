@@ -163,6 +163,12 @@ button {
 .section {
   position: relative;
   padding-block: clamp(6rem, 11vw, 11rem);
+  scroll-margin-top: calc(var(--nav-h) + 16px);
+}
+
+section[id],
+[id] {
+  scroll-margin-top: calc(var(--nav-h) + 16px);
 }
 
 .hairline-t { border-top: 1px solid var(--line); }
